@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
     git remote add origin https://github.com/mcarpenter/afl
     git fetch --depth=1 origin
     git checkout -b master --track origin/master
-    make
+    make install
 
     # AFL tells you to do this, so do it
     echo core > /proc/sys/kernel/core_pattern
