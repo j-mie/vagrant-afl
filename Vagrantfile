@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
     apt-get update
     apt-get install build-essential git -y
     mkdir ./afl
-    mount -o size=1G -t tmpfs none ./afl
+    mount -o size=1G -t ramfs none ./afl
     cd ./afl
     git init
     git remote add origin https://github.com/mcarpenter/afl
