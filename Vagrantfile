@@ -23,15 +23,25 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
+    # Update the OS
     apt-get update
+
+    # Install things we need
     apt-get install build-essential git -y
+
+    # Create afl directory and mount it as a 1GB RAMDisk
     mkdir ./afl
     mount -o size=1G -t ramfs none ./afl
     cd ./afl
+
+    # Git clone and make AFL
     git init
     git remote add origin https://github.com/mcarpenter/afl
     git fetch --depth=1 origin
     git checkout -b master --track origin/master
     make
+
+    # AFL tells you to do this, so do it
+    echo core > /proc/sys/kernel/core_pattern
   SHELL
 end
