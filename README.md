@@ -1,6 +1,6 @@
 # vagrant-afl
 
-When you want to mess around with afl in a hurry. Installs AFL on a ramdisk too, just to save you smashing up that tasty SSD. Heads up: Because this is using a ramdisk you'll lose all your files if the VM reboots. *don't blame me for losing all your 0days please :)*
+When you want to mess around with afl in a hurry. Installs AFL on a ramdisk too, just to save you smashing up that tasty SSD. Heads up: Because this is using a ramdisk you'll lose all your files if the VM reboots. **don't blame me for losing all your 0days please :)**
 
 ## Usage:
 
