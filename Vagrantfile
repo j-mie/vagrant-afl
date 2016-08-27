@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-    apt-get install build-essential git
+    apt-get install build-essential git -y
     mkdir ./afl
     mount -o size=1G -t tmpfs none ./afl
     cd ./afl
